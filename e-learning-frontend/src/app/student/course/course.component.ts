@@ -7,7 +7,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 @Component({
   selector: 'app-course',
   standalone: true,
-  imports: [CommonModule, ElipsePipe, HttpClientModule],
+  imports: [CommonModule, ElipsePipe],
   templateUrl: './course.component.html',
   styleUrl: './course.component.css'
 })
