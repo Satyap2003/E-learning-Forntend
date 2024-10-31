@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { ShareModule } from '../share.module';
 
 @Component({
   selector: 'app-admin',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [ShareModule],
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.css'
 })

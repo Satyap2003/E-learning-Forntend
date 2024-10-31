@@ -7,10 +7,10 @@ export class Course {
     img:string;
     duration: string;
     noOfStudents:number;
-    lecture: string;
+    lectureId: string;
     ratingCount: number;
 
-    constructor(id: number, name: string, description: string, price: number, rating:number, img:string, duration:string, noOfStudents:number, lecture:string, ratingCount:number) {
+    constructor(id: number, name: string, description: string, price: number, rating:number, img:string, duration:string, noOfStudents:number, lectureId:string, ratingCount:number) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -19,7 +19,7 @@ export class Course {
         this.img=img;
         this.duration=duration;
         this.noOfStudents=noOfStudents;
-        this.lecture=lecture;
+        this.lectureId=lectureId;
         this.ratingCount=ratingCount;
     }
 }

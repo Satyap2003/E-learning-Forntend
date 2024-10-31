@@ -1,54 +1,44 @@
-<form (ngSubmit)="onSubmit()" #courseForm="ngForm" class="container mt-4 p-4 border rounded course-form">
-    <!-- <div class="mb-3">
-      <label for="id" class="form-label">ID</label>
-      <input type="number" id="id" [(ngModel)]="course.id" name="id" required class="form-control" />
-    </div> -->
-  
-    <div class="mb-3">
-      <label for="name" class="form-label">Name</label>
-      <input type="text" id="name" [(ngModel)]="course.name" name="name" required class="form-control" />
-    </div>
-  
-    <div class="mb-3">
-      <label for="description" class="form-label">Description</label>
-      <textarea id="description" [(ngModel)]="course.description" name="description" class="form-control"></textarea>
-    </div>
-  
-    <div class="mb-3">
-      <label for="price" class="form-label">Price</label>
-      <input type="number" id="price" [(ngModel)]="course.price" name="price" required min="0" class="form-control" />
-    </div>
-  
-    <div class="mb-3">
-      <label for="rating" class="form-label">Rating</label>
-      <input type="number" id="rating" [(ngModel)]="course.rating" name="rating" min="0" max="5" class="form-control" />
-    </div>
-  
-    <div class="mb-3">
-      <label for="img" class="form-label">Image URL</label>
-      <input type="text" id="img" [(ngModel)]="course.img" name="img" class="form-control" />
-    </div>
-  
-    <div class="mb-3">
-      <label for="duration" class="form-label">Duration</label>
-      <input type="text" id="duration" [(ngModel)]="course.duration" name="duration" class="form-control" />
-    </div>
-  
-    <div class="mb-3">
-      <label for="noOfStudents" class="form-label">Number of Students</label>
-      <input type="number" id="noOfStudents" [(ngModel)]="course.noOfStudents" name="noOfStudents" min="0" class="form-control" />
-    </div>
-  
-    <div class="mb-3">
-      <label for="lecture" class="form-label">Lecture</label>
-      <input type="text" id="lecture" [(ngModel)]="course.lecture" name="lecture" class="form-control" />
-    </div>
-  
-    <div class="mb-3">
-      <label for="ratingCount" class="form-label">Rating Count</label>
-      <input type="number" id="ratingCount" [(ngModel)]="course.ratingCount" name="ratingCount" min="0" class="form-control" />
-    </div>
-  
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
-  
+<div class="mb-3">
+  <label for="name" class="form-label">Name</label>
+  <input type="text" id="name" [(ngModel)]="course.name" name="name" required class="form-control" />
+</div>
+
+<div class="mb-3">
+  <label for="description" class="form-label">Description</label>
+  <textarea id="description" [(ngModel)]="course.description" name="description" class="form-control"></textarea>
+</div>
+
+<div class="mb-3">
+  <label for="price" class="form-label">Price</label>
+  <input type="number" id="price" [(ngModel)]="course.price" name="price" required min="0" class="form-control" />
+</div>
+
+<div class="mb-3">
+  <label for="rating" class="form-label">Rating</label>
+  <input type="number" id="rating" [(ngModel)]="course.rating" name="rating" min="0" max="5" class="form-control" />
+</div>
+
+<div class="mb-3">
+  <label for="img" class="form-label">Image URL</label>
+  <input type="text" id="img" [(ngModel)]="course.img" name="img" class="form-control" />
+</div>
+
+<div class="mb-3">
+  <label for="duration" class="form-label">Duration</label>
+  <input type="text" id="duration" [(ngModel)]="course.duration" name="duration" class="form-control" />
+</div>
+
+<div class="mb-3">
+  <label for="noOfStudents" class="form-label">Number of Students</label>
+  <input type="number" id="noOfStudents" [(ngModel)]="course.noOfStudents" name="noOfStudents" min="0"
+    class="form-control" />
+</div>
+
+<div class="mb-3">
+  <label for="lecture" class="form-label">Lecture</label> {{course.lectureId}}
+  <p-dropdown [options]="lectures" id="lectureId" name="lectureId" [(ngModel)]="course.lectureId" optionLabel="name"
+    optionValue="id" placeholder="Select a City" />
+</div>
+
+
+<button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>

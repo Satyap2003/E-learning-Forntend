@@ -1,0 +1,21 @@
+<form (ngSubmit)="onSubmit()" #lectureForm="ngForm" class="container mt-5 p-4 border rounded shadow-sm bg-light lecture-form">
+  
+    <h3 class="text-center mb-4">Lecture Details</h3>
+    
+    <div class="mb-3">
+      <label for="title" class="form-label">Name</label>
+      <input type="text" id="title" [(ngModel)]="lecture.name" name="name" required maxlength="100" class="form-control" />
+    </div>
+  
+    <button type="submit" class="btn btn-primary w-100 mt-3">Submit</button>
+  </form>
+
+  <table>
+    <tr>
+      <th>NAME</th>
+      </tr>
+      <tr *ngFor="let lec of lectures">
+        <th>{{lec.name}}</th>
+      </tr>
+  </table>
+  
