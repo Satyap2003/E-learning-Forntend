@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, RouterOutlet, Routes } from '@angular/router';
 import { StudentComponent } from './student.component';
 import { CourseComponent } from './course/course.component';
+import { SignInComponent } from './signin/signin.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,9 @@ const routes: Routes = [
       {
         path: 'course',
         component: CourseComponent
+      },{
+        path:'signin',
+        component:SignInComponent
       }
     ]
   }
