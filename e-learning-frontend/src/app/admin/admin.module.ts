@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { AdminComponent } from './admin.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MasterCourseComponent } from './master-course/master-course.component';
 import { MasterDepartmentComponent } from './master-department/master-department.component';
 import { MasterLectureComponent } from './master-lecture/master-lecture.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DropdownModule } from 'primeng/dropdown';
-import { ShareModule } from '../share.module';
+import { SharedModule } from '../shared/shared.module';
+import { AboutUsComponent } from '../shared/about-us/about-us.component';
+import { ContactUsComponent } from '../shared/contact-us/contact-us.component';
+import { ManageMasterCourseComponent } from './manage-master-course/manage-master-course.component';
 
 const routes: Routes = [
   {
@@ -22,8 +22,18 @@ const routes: Routes = [
         component: MasterDepartmentComponent
       },
       {
-        path: 'master-lecture', 
+        path: 'master-lecture',
         component: MasterLectureComponent
+      },{
+        path: 'about-us',
+        component: AboutUsComponent,
+      },
+      {
+        path: 'contact-us',
+        component: ContactUsComponent,
+      },{
+        path: 'manage-master-course',
+        component: ManageMasterCourseComponent
       }
     ]
   }
@@ -32,7 +42,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [],
   imports: [
-    ShareModule,
+    SharedModule,
     RouterModule.forChild(routes)
   ]
 })

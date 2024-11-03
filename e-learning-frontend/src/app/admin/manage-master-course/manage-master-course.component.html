@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="col-md-4 mb-3">
+    <label for="lecture" class="form-label">Course</label>
+    <br>
+    <p-dropdown [options]="courses" id="courseId" name="courseId" [(ngModel)]="module.courseId" optionLabel="name"
+      optionValue="id" placeholder="Select a Course"></p-dropdown>
+  </div>
+  <div class="col-md-4">
+    <label for="name" class="form-label">Name</label>
+    <input type="text" id="name" [(ngModel)]="module.name" name="duration" class="form-control" />
+  </div>
+  <div class="col-md-4">
+    <label for="moduleNumber" class="form-label">Module Number</label>
+    <input type="number" id="moduleNumber" [(ngModel)]="module.moduleNumber" name="duration" class="form-control" />
+  </div>
+  <div class="col-md-12 mb-3">
+    <label for="description" class="form-label">Description</label>
+    <textarea id="description" [(ngModel)]="module.description" name="description" rows="5"
+      class="form-control"></textarea>
+  </div>
+  <div class="row">
+    <div class="col-12 text-end">
+      <button type="button" class="btn btn-primary me-2" (click)="onSubmit()">Save</button>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4 mb-3">
+  <p-dropdown [options]="courses" id="courseId" name="courseId" [(ngModel)]="selectedCourseId" (ngModelChange)="selectedCourseIdChange()" optionLabel="name"
+    optionValue="id" placeholder="Select a Course"></p-dropdown>
+</div>
+
+<p-table [value]="modules" responsiveLayout="scroll">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Name</th>
+      <th>Module Number</th>
+      <th>Description</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-module>
+    <tr>
+      <td>{{ module.name }}</td>
+      <td>{{ module.moduleNumber }}</td>
+      <td>{{ module.description }}</td>
+    </tr>
+  </ng-template>
+</p-table>
+

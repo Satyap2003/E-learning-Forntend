@@ -1,21 +1,72 @@
-<form (ngSubmit)="onSubmit()" #lectureForm="ngForm" class="container mt-5 p-4 border rounded shadow-sm bg-light lecture-form">
-  
-    <h3 class="text-center mb-4">Lecture Details</h3>
-    
-    <div class="mb-3">
-      <label for="title" class="form-label">Name</label>
-      <input type="text" id="title" [(ngModel)]="lecture.name" name="name" required maxlength="100" class="form-control" />
-    </div>
-  
-    <button type="submit" class="btn btn-primary w-100 mt-3">Submit</button>
-  </form>
+<div class="row mt-5">
+  <div class="col-md-4">
+    <label for="name" class="form-label">Name</label>
+    <input type="text" id="name" [(ngModel)]="lecture.name" name="name" required maxlength="100" class="form-control" />
+  </div>
 
-  <table>
+  <div class="col-md-4">
+    <label for="designation" class="form-label">Designation</label>
+    <input type="text" id="designation" [(ngModel)]="lecture.designation" name="designation" required maxlength="100"
+      class="form-control" />
+  </div>
+
+  <div class="col-md-4">
+    <label for="profileImage" class="form-label">Profile Image</label>
+    <input type="file" id="profileImage" (change)="onFileSelected($event)" required class="form-control" />
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-4">
+    <label for="facebook" class="form-label">Facebook Link</label>
+    <input type="text" id="facebook" [(ngModel)]="lecture.facebook" name="facebook" required maxlength="100"
+      class="form-control" />
+  </div>
+
+  <div class="col-md-4">
+    <label for="twiter" class="form-label">Twitter Link</label>
+    <input type="text" id="twiter" [(ngModel)]="lecture.twiter" name="twiter" required maxlength="100"
+      class="form-control" />
+  </div>
+
+  <div class="col-md-4">
+    <label for="insta" class="form-label">Instagram Link</label>
+    <input type="text" id="insta" [(ngModel)]="lecture.insta" name="insta" required maxlength="100"
+      class="form-control" />
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12 text-end">
+    <button type="submit" class="btn btn-primary mt-2 mb-2" (click)="onSubmit()">Submit</button>
+  </div>
+</div>
+
+
+
+<p-table [value]="lectures" responsiveLayout="scroll">
+  <ng-template pTemplate="header">
     <tr>
-      <th>NAME</th>
-      </tr>
-      <tr *ngFor="let lec of lectures">
-        <th>{{lec.name}}</th>
-      </tr>
-  </table>
-  
+      <th>ID</th>
+      <th>Name</th>
+      <th>Designation</th>
+      <th>Profile Image</th>
+      <th>Facebook</th>
+      <th>Twitter</th>
+      <th>Instagram</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-lecture>
+    <tr>
+      <td>{{ lecture.id }}</td>
+      <td>{{ lecture.name }}</td>
+      <td>{{ lecture.designation }}</td>
+      <td>
+        <img [src]="lecture.profileImage" alt="{{ lecture.name }}" width="50" height="50">
+      </td>
+      <td><a [href]="lecture.facebook" target="_blank">Facebook</a></td>
+      <td><a [href]="lecture.twiter" target="_blank">Twitter</a></td>
+      <td><a [href]="lecture.insta" target="_blank">Instagram</a></td>
+    </tr>
+  </ng-template>
+</p-table>

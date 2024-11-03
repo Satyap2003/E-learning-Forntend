@@ -1,0 +1,30 @@
+<p-table [value]="course">
+  <ng-template pTemplate="header">
+      <tr>
+          <!-- <th>ID</th> -->
+          <th>Name</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Rating</th>
+          <th>Image</th>
+          <th>Duration</th>
+          <th>Number of Students</th>
+          <th>Lecture ID</th>
+          <th>Rating Count</th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-course>
+      <tr>
+          <!-- <td>{{ course.id }}</td> -->
+          <td>{{ course.name }}</td>
+          <td>{{ course.description }}</td>
+          <td>{{ course.price }}</td>
+          <td>{{ course.rating }}</td>
+          <td><img [src]="course.img" alt="Course Image" width="50"></td>
+          <td>{{ course.duration }}</td>
+          <td>{{ course.noOfStudents }}</td>
+          <td>{{ course.lectureId }}</td>
+          <td>{{ course.ratingCount }}</td>
+      </tr>
+  </ng-template>
+</p-table>

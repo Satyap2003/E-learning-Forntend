@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { User } from '../../model/user';
 
 @Component({
   selector: 'app-signin',
@@ -11,22 +12,13 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./signin.component.css']
 })
 export class SignInComponent {
-onSignIn() {
-throw new Error('Method not implemented.');
-}
   URL = 'http://localhost:8080/api/signin';
-  user = {
-    fullname: '',
-    dateOfBirth: '',
-    dummyAccount: '',
-    location: '',
-    country: '',
-    pincode: ''
-  };
+  user = new User();
 
   constructor(private http: HttpClient) {}
 
   onSubmit(): void {
+    console.log(this.user);
     this.http.post(this.URL, this.user).subscribe(
       (res) => {
         console.log('Sign-in successful:', res);
