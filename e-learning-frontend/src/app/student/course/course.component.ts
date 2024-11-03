@@ -4,11 +4,12 @@ import { CommonModule } from '@angular/common';
 import { ElipsePipe } from '../../pipe/elipse.pipe';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from '../../shared/api.service';
+import { SharedModule } from '../../shared/shared.module';
 
 @Component({
   selector: 'app-course',
   standalone: true,
-  imports: [CommonModule, ElipsePipe],
+  imports: [SharedModule],
   templateUrl: './course.component.html',
   styleUrl: './course.component.css',
 })

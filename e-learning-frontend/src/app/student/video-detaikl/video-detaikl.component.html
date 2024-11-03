@@ -1,0 +1,17 @@
+<div class="container">
+  <p-panel header="{{ course.name }}" class="course-panel">
+    <p>{{ course.description }}</p>
+  </p-panel>
+
+  <p-accordion>
+    <p-accordionTab *ngFor="let module of course.modules" [header]="module.name">
+        <p>{{ module.description }}</p>
+        <ul class="list-unstyled">
+            <li *ngFor="let video of module.videos" class="video-item">
+                <strong>{{ video.name }}</strong>
+                <p>{{ video.description }}</p>
+            </li>
+        </ul>
+    </p-accordionTab>
+  </p-accordion>
+</div>

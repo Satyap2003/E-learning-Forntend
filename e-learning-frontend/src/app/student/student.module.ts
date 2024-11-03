@@ -8,6 +8,9 @@ import { SharedModule } from 'primeng/api';
 import { AboutUsComponent } from '../shared/about-us/about-us.component';
 import { ContactUsComponent } from '../shared/contact-us/contact-us.component';
 import { StudentHomeComponent } from './student-home/student-home.component';
+import { MyCoursesComponent } from './my-courses/my-courses.component';
+import { VideoDetaiklComponent } from './video-detaikl/video-detaikl.component';
+import { ExploreCourseComponent } from './explore-course/explore-course.component';
 
 const routes: Routes = [
   {
@@ -32,6 +35,16 @@ const routes: Routes = [
       {
         path: 'contact-us',
         component: ContactUsComponent,
+      },{
+        path:'my-course',
+        component: MyCoursesComponent
+      }, {
+        path: 'course/:courseId',
+        component: VideoDetaiklComponent
+      },
+      {
+        path: 'explore/:courseId',
+        component: ExploreCourseComponent
       },
       {
         path: '',

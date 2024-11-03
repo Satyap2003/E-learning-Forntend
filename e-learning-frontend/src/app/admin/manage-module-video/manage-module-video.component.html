@@ -1,0 +1,59 @@
+<div class="row mt-5">
+  <div class="col-md-4 mb-3">
+    <label for="lecture" class="form-label">Course</label>
+    <br>
+    <p-dropdown [options]="courses" id="courseId" name="courseId" [(ngModel)]="video.courseId" optionLabel="name"
+      optionValue="id" placeholder="Select a Course" (ngModelChange)="selectedCourseIdChange()"></p-dropdown>
+  </div>
+  <div class="col-md-4 mb-3">
+    <label for="lecture" class="form-label">Module</label>
+    <br>
+    <p-dropdown [options]="modules" id="moduleId" name="moduleId" [(ngModel)]="video.moduleId" optionLabel="name"
+      optionValue="id" placeholder="Select a module" (ngModelChange)="getVideos()"></p-dropdown>
+  </div>
+  <div class="col-md-4">
+    <label for="name" class="form-label">Name</label>
+    <input type="text" id="name" [(ngModel)]="video.name" name="name" class="form-control" />
+  </div>
+  <div class="col-md-4">
+    <label for="videoNumber" class="form-label">Video Number</label>
+    <input type="number" id="videoNumber" [(ngModel)]="video.videoNumber" name="videoNumber" class="form-control" />
+  </div>
+  <div class="col-md-4">
+    <label for="img" class="form-label">Video</label>
+    <input
+      type="file"
+      id="img"
+      (change)="onFileSelected($event)"
+      required
+      class="form-control"
+    />
+  </div>
+  <div class="col-md-12 mb-3">
+    <label for="description" class="form-label">Description</label>
+    <textarea id="description" [(ngModel)]="video.description" name="description" rows="5"
+      class="form-control"></textarea>
+  </div>
+  <div class="row">
+    <div class="col-12 text-end">
+      <button type="button" class="btn btn-primary me-2" (click)="onSubmit()">Save Video</button>
+    </div>
+  </div>
+</div>
+
+<p-table [value]="videos" responsiveLayout="scroll">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Name</th>
+      <th>Module Number</th>
+      <th>Description</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-module>
+    <tr>
+      <td>{{ module.name }}</td>
+      <td>{{ module.videoNumber }}</td>
+      <td>{{ module.description }}</td>
+    </tr>
+  </ng-template>
+</p-table>

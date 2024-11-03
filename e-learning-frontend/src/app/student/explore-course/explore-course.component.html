@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10">
+      <video id="my_video_1" class="video-js vjs-default-skin" width="640px" controls preload="none">
+        <source [src]="currentVideo.content" type='video/mp4' />
+      </video>
+    </div>
+
+    <div class="col-md-2">
+      <p-accordion>
+        <p-accordionTab *ngFor="let module of course.modules" [header]="module.name">
+          <ul class="list-unstyled">
+            <li *ngFor="let video of module.videos" class="video-item" style="cursor: pointer;"
+              (click)="onVideoClick(video)">
+              <strong>{{ video.name }}</strong>
+            </li>
+          </ul>
+        </p-accordionTab>
+      </p-accordion>
+    </div>
+  </div>
+</div>

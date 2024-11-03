@@ -30,8 +30,8 @@ export class ManageMasterCourseComponent implements OnInit {
   }
 
   selectedCourseIdChange() {
-    console.log(this.selectedCourseId);
-    this.apiService.get("module/"+this.selectedCourseId).subscribe((res : any) => {
+    this.modules = [];
+    this.apiService.get("module/"+this.module.courseId).subscribe((res : any) => {
       console.log();
       this.modules = res;
     });

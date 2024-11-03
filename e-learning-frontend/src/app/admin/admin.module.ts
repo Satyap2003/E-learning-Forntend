@@ -8,6 +8,7 @@ import { SharedModule } from '../shared/shared.module';
 import { AboutUsComponent } from '../shared/about-us/about-us.component';
 import { ContactUsComponent } from '../shared/contact-us/contact-us.component';
 import { ManageMasterCourseComponent } from './manage-master-course/manage-master-course.component';
+import { ManageModuleVideoComponent } from './manage-module-video/manage-module-video.component';
 
 const routes: Routes = [
   {
@@ -34,6 +35,9 @@ const routes: Routes = [
       },{
         path: 'manage-master-course',
         component: ManageMasterCourseComponent
+      } ,{
+        path: 'manage-master-video',
+        component: ManageModuleVideoComponent
       }
     ]
   }

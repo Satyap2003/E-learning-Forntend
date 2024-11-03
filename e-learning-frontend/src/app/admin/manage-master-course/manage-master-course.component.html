@@ -1,9 +1,9 @@
-<div class="row">
+<div class="row mt-5">
   <div class="col-md-4 mb-3">
     <label for="lecture" class="form-label">Course</label>
     <br>
     <p-dropdown [options]="courses" id="courseId" name="courseId" [(ngModel)]="module.courseId" optionLabel="name"
-      optionValue="id" placeholder="Select a Course"></p-dropdown>
+      optionValue="id" placeholder="Select a Course" (ngModelChange)="selectedCourseIdChange()"></p-dropdown>
   </div>
   <div class="col-md-4">
     <label for="name" class="form-label">Name</label>
@@ -20,15 +20,16 @@
   </div>
   <div class="row">
     <div class="col-12 text-end">
-      <button type="button" class="btn btn-primary me-2" (click)="onSubmit()">Save</button>
+      <button type="button" class="btn btn-primary me-2" (click)="onSubmit()">Create Module</button>
     </div>
   </div>
 </div>
 
-<div class="col-md-4 mb-3">
+<!-- <div class="col-md-4 mb-3">
   <p-dropdown [options]="courses" id="courseId" name="courseId" [(ngModel)]="selectedCourseId" (ngModelChange)="selectedCourseIdChange()" optionLabel="name"
     optionValue="id" placeholder="Select a Course"></p-dropdown>
-</div>
+</div> -->
+<br>
 
 <p-table [value]="modules" responsiveLayout="scroll">
   <ng-template pTemplate="header">
@@ -36,6 +37,7 @@
       <th>Name</th>
       <th>Module Number</th>
       <th>Description</th>
+      <th>Video Count</th>
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-module>
@@ -43,6 +45,7 @@
       <td>{{ module.name }}</td>
       <td>{{ module.moduleNumber }}</td>
       <td>{{ module.description }}</td>
+      <td>{{ module.videos ? module.videos.length : 0 }}</td>
     </tr>
   </ng-template>
 </p-table>

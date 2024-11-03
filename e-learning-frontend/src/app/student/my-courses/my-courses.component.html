@@ -3,7 +3,7 @@
   <div class="container">
     <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
       <h6 class="section-title bg-white text-center text-primary px-3">Courses</h6>
-      <h1 class="mb-5">Popular Courses</h1>
+      <h1 class="mb-5">My Courses</h1>
     </div>
     <div class="row g-4 justify-content-center">
       <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s" *ngFor="let course of courses">
@@ -22,10 +22,8 @@
             <h5 class="mb-4" [title]="course.description">{{course.description | elipse}}</h5>
           </div>
           <div class="d-flex justify-content-center">
-            <a [routerLink]="['/student/course', course.id]" routerLinkActive="router-link-active"  class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end"
-              style="border-radius: 30px 0 0 30px;">View Detail</a>
-            <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Join
-              Now</a>
+            <a [routerLink]="['/student/explore', course.id]" routerLinkActive="router-link-active"  class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end"
+              >Explore</a>
           </div>
           <div class="d-flex border-top">
             <small class="flex-fill text-center border-end py-2"><i

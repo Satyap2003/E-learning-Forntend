@@ -1,3 +1,5 @@
+import { Module } from "./module";
+
 export class Course {
   id: number = 0;
   name: string = '';
@@ -10,6 +12,7 @@ export class Course {
   lectureId: string = '';
   lectureName: string = '';
   ratingCount: number = 0;
+  modules : Module[] = [];
 
   constructor(
       id: number = 0,
@@ -22,7 +25,8 @@ export class Course {
       noOfStudents: number = 0,
       lectureId: string = '',
       lectureName : string = '',
-      ratingCount: number = 0
+      ratingCount: number = 0,
+      modules : Module[] = []
   ) {
       this.id = id;
       this.name = name;
@@ -35,5 +39,6 @@ export class Course {
       this.lectureId = lectureId;
       this.lectureName = lectureName;
       this.ratingCount = ratingCount;
+      this.modules = modules;
   }
 }
