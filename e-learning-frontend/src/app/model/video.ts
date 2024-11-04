@@ -5,5 +5,5 @@ export class Video {
   name!:string;
   description!:string;
   videoNumber!:string;
-  content!:string;
+  originalFileName!:string;
 }

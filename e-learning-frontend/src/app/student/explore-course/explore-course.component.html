@@ -1,9 +1,13 @@
 <div class="container">
   <div class="row">
     <div class="col-md-10">
-      <video id="my_video_1" class="video-js vjs-default-skin" width="640px" controls preload="none">
-        <source [src]="currentVideo.content" type='video/mp4' />
+      <video id="my_video_1" class="video-js vjs-default-skin" width="900px" controls preload="none" #videoElement>
+        <source [src]="videoURl" />
+        Your browser does not support the video tag.
       </video>
+      <p-panel *ngIf="currentVideo" header="{{ currentVideo.name }}" class="mt-3">
+        <p>{{ currentVideo.description }}</p>
+      </p-panel>
     </div>
 
     <div class="col-md-2">

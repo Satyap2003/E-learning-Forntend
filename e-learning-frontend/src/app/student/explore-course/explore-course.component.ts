@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ApiService } from '../../shared/api.service';
 import { ActivatedRoute } from '@angular/router';
 import { SharedModule } from '../../shared/shared.module';
@@ -18,6 +18,9 @@ export class ExploreCourseComponent implements OnInit {
   course : Course = new Course();
   courseId: any = '';
   currentVideo : Video = new Video();
+  videoURl = '';
+  @ViewChild('videoElement') videoElement!: ElementRef<HTMLVideoElement>;
+
   constructor(private apiService: ApiService, private route: ActivatedRoute) {}
   ngOnInit(): void {
     this.currentVideo = new Video();
@@ -28,8 +31,11 @@ export class ExploreCourseComponent implements OnInit {
   }
 
   onVideoClick(video : Video) {
-    this.apiService.get("video/find-by-id/" +video.id).subscribe((res : any) => {
-      this.currentVideo.content = res.content;
-    });
+    this.currentVideo = video;
+    this.videoURl = this.apiService.BASEURL+"video/find-by-id/" +video.id;
+    // Call load on the video element after updating the source
+    if (this.videoElement && this.videoElement.nativeElement) {
+      this.videoElement.nativeElement.load();
+    }
   }
 }
