@@ -11,6 +11,7 @@ import { StudentHomeComponent } from './student-home/student-home.component';
 import { MyCoursesComponent } from './my-courses/my-courses.component';
 import { VideoDetaiklComponent } from './video-detaikl/video-detaikl.component';
 import { ExploreCourseComponent } from './explore-course/explore-course.component';
+import { LoginComponent } from '../login/login.component';
 
 const routes: Routes = [
   {
@@ -45,6 +46,9 @@ const routes: Routes = [
       {
         path: 'explore/:courseId',
         component: ExploreCourseComponent
+      }, {
+        path: 'login',
+        component: LoginComponent
       },
       {
         path: '',

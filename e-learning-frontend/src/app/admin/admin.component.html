@@ -9,7 +9,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
-            <a href="index.html" class="nav-item nav-link active">Home</a>
+            <a routerLink="/admin" class="nav-item nav-link active">Home</a>
             <a routerLink="/admin/master-lecture" class="nav-item nav-link">Lecture</a>
             <a routerLink="/admin/master-course" class="nav-item nav-link">Course</a>
             <a routerLink="/admin/manage-master-course" class="nav-item nav-link">Manage Module</a>
@@ -17,11 +17,10 @@
             <a routerLink="/admin/about-us" class="nav-item nav-link">About</a>
             <a routerLink="/admin/contact-us" class="nav-item nav-link">Contact</a>
         </div>
-        <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
     </div>
   </nav>
 
-  <div class="container-fluid">
+  <div class="container-fluid" style="min-height: 42vh;">
     <router-outlet></router-outlet>
   </div>
 

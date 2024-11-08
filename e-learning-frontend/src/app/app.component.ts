@@ -12,12 +12,12 @@ import { RouterOutlet } from '@angular/router';
 export class AppComponent implements OnInit {
   title = 'e-learning-frontend';
 
-  constructor(private http : HttpClient) {}
+  constructor(private http : HttpClient) {} //Dependancy injection
 
   ngOnInit(): void {
     this.http.get("http://localhost:8080/api/course").subscribe((res) => {
       console.log(res)
     });
-    
+
   }
 }

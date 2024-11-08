@@ -13,8 +13,10 @@ export class ApiService {
     return this.http.get(this.BASEURL + url);
   }
 
-  post(url: string, body: any) {
-    return this.http.post(this.BASEURL + url, body);
+  post(url: string, body: any, headers: any = {}) {
+    // Pass headers as part of the options object
+    const options = { headers: headers };
+    return this.http.post(this.BASEURL + url, body, options);
   }
 
   postFile(endpoint: string, data: any) {

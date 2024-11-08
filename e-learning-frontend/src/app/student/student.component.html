@@ -14,21 +14,24 @@
             <a routerLink="/student/course" class="nav-item nav-link">Courses</a>
             <a routerLink="/student/my-course" class="nav-item nav-link">My Courses</a>
 
-            <div class="nav-item dropdown">
+            <!-- <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                 <div class="dropdown-menu fade-down m-0">
                     <a href="team.html" class="dropdown-item">Our Team</a>
                     <a href="testimonial.html" class="dropdown-item">Testimonial</a>
                     <a href="404.html" class="dropdown-item">404 Page</a>
                 </div>
-            </div>
+            </div> -->
             <a routerLink="/student/contact-us" class="nav-item nav-link">Contact</a>
         </div>
+        <a class="btn btn-primary py-4 px-lg-5 d-none d-lg-block" style="background-color: green;" routerLink="/student/login">Login<i class="fa fa-user ms-3"></i></a>
         <a class="btn btn-primary py-4 px-lg-5 d-none d-lg-block" routerLink="/student/signin">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
     </div>
   </nav>
 
-  <router-outlet></router-outlet>
+  <div style="min-height: 42vh;">
+    <router-outlet></router-outlet>
+  </div>
 
   <!-- Footer Start -->
   <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">

@@ -9,6 +9,7 @@ import { AboutUsComponent } from '../shared/about-us/about-us.component';
 import { ContactUsComponent } from '../shared/contact-us/contact-us.component';
 import { ManageMasterCourseComponent } from './manage-master-course/manage-master-course.component';
 import { ManageModuleVideoComponent } from './manage-module-video/manage-module-video.component';
+import { LoginComponent } from '../login/login.component';
 
 const routes: Routes = [
   {
@@ -17,37 +18,47 @@ const routes: Routes = [
     children: [
       {
         path: 'master-course',
-        component: MasterCourseComponent
-      } ,{
+        component: MasterCourseComponent,
+      },
+      {
         path: 'master-department',
-        component: MasterDepartmentComponent
+        component: MasterDepartmentComponent,
       },
       {
         path: 'master-lecture',
-        component: MasterLectureComponent
-      },{
+        component: MasterLectureComponent,
+      },
+      {
         path: 'about-us',
         component: AboutUsComponent,
       },
       {
         path: 'contact-us',
         component: ContactUsComponent,
-      },{
+      },
+      {
         path: 'manage-master-course',
-        component: ManageMasterCourseComponent
-      } ,{
+        component: ManageMasterCourseComponent,
+      },
+      {
         path: 'manage-master-video',
-        component: ManageModuleVideoComponent
-      }
-    ]
-  }
+        component: ManageModuleVideoComponent,
+      },
+      {
+        path: 'login',
+        component: LoginComponent,
+      },
+      {
+        path: '',
+        redirectTo: 'login',
+        pathMatch: 'full',
+      },
+    ],
+  },
 ];
 
 @NgModule({
   declarations: [],
-  imports: [
-    SharedModule,
-    RouterModule.forChild(routes)
-  ]
+  imports: [SharedModule, RouterModule.forChild(routes)],
 })
-export class AdminModule { }
+export class AdminModule {}

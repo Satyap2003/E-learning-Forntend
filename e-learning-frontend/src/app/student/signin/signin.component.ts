@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { User } from '../../model/user';
+import { ApiService } from '../../shared/api.service';
 
 @Component({
   selector: 'app-signin',
@@ -12,14 +13,14 @@ import { User } from '../../model/user';
   styleUrls: ['./signin.component.css']
 })
 export class SignInComponent {
-  URL = 'http://localhost:8080/api/signin';
+  URL = 'register/student';
   user = new User();
 
-  constructor(private http: HttpClient) {}
+  constructor(private apiService: ApiService) {}
 
   onSubmit(): void {
     console.log(this.user);
-    this.http.post(this.URL, this.user).subscribe(
+    this.apiService.post(this.URL, this.user).subscribe(
       (res) => {
         console.log('Sign-in successful:', res);
       },

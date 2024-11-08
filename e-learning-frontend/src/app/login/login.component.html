@@ -1,0 +1,38 @@
+
+<form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+  <div>
+    <label for="username">Username</label>
+    <input
+    type="text"
+      id="username"
+      name="username"
+      [(ngModel)]="authModel.username"
+      required
+      #usernameField="ngModel"
+    />
+    <div *ngIf="usernameField.invalid && usernameField.touched">
+      Username is required.
+    </div>
+  </div>
+
+  <div>
+    <label for="password">Password</label>
+    <input
+      id="password"
+      name="password"
+      [(ngModel)]="authModel.password"
+      type="password"
+      required
+      #passwordField="ngModel"
+    />
+    <div *ngIf="passwordField.invalid && passwordField.touched">
+      Password is required.
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="loginForm.invalid">Login</button>
+
+  <div *ngIf="loginError" class="error-message">
+    Invalid username or password.
+  </div>
+</form>
